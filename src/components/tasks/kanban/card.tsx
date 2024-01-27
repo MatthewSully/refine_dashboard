@@ -70,7 +70,7 @@ const ProjectCard = ({ id, title, dueDate, users }: ProjectCardProps) => {
     ];
 
     return dropdownItems;
-  }, []);
+  }, [edit, id, mutate]);
 
   const dueDateOptions = useMemo(() => {
     if (!dueDate) return null;
@@ -80,7 +80,7 @@ const ProjectCard = ({ id, title, dueDate, users }: ProjectCardProps) => {
       color: getDateColor({ date: dueDate }) as string,
       text: date.format("MMM DD"),
     };
-  }, []);
+  }, [dueDate]);
 
   return (
     <ConfigProvider
